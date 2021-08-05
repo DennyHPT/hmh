@@ -48,7 +48,7 @@ public class ReportGenerate {
 				System.out.println("Folder Exists");
 			}
 		} catch (Exception e) {
-			
+
 			e.printStackTrace();
 		}
 
@@ -86,8 +86,8 @@ public class ReportGenerate {
 
 			CellStyle style = workbook.createCellStyle();
 			style.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
-		//	style.setFillPattern(CellStyle.SOLID_FOREGROUND);
-		
+			//	style.setFillPattern(CellStyle.SOLID_FOREGROUND);
+
 
 			font = workbook.createFont();
 			font.setColor(IndexedColors.RED.getIndex());
@@ -95,7 +95,7 @@ public class ReportGenerate {
 
 			CellStyle style1 = workbook.createCellStyle();
 			style1.setFillForegroundColor(IndexedColors.AQUA.getIndex());
-		//	style1.setFillPattern(CellStyle.SOLID_FOREGROUND);
+			//	style1.setFillPattern(CellStyle.SOLID_FOREGROUND);
 
 			row = sheet.createRow(sheet.getLastRowNum() + 1);
 
@@ -135,7 +135,7 @@ public class ReportGenerate {
 		workbook.write(fos);
 		fos.flush();
 	}
-	
+
 	public static void logStart()
 	{
 		extent = new ExtentReports(".\\Reports\\HtmlReport.html", false);
@@ -149,7 +149,7 @@ public class ReportGenerate {
 		Reports.details=details;
 		Parent.log(LogStatus.PASS, details, actualResult);
 
-		Parent.log(LogStatus.PASS,Parent.addScreenCapture(GenericMethod.addScreenCapture()) + screenText + " Test Pass");
+		Parent.log(LogStatus.PASS,Parent.addScreenCapture(genericMethods.addScreenCapture()) + screenText + " Test Pass");
 
 	}
 
@@ -157,7 +157,7 @@ public class ReportGenerate {
 	{
 		Reports.details=details;
 		Parent.log(LogStatus.FAIL, details, actualResult);
-		Parent.log(LogStatus.FAIL,Parent.addScreenCapture(GenericMethod.addScreenCapture()) + screenText + " Test Fail");
+		Parent.log(LogStatus.FAIL,Parent.addScreenCapture(genericMethods.addScreenCapture()) + screenText + " Test Fail");
 	}
 
 	public static void Info(String details, String actualResult) throws IOException, InterruptedException
@@ -170,7 +170,7 @@ public class ReportGenerate {
 	{
 		Reports.details=details;
 		Parent.log(LogStatus.SKIP, details, actualResult);
-		Parent.log(LogStatus.SKIP,Parent.addScreenCapture(GenericMethod.addScreenCapture()) + screenText +" Test skipped");
+		Parent.log(LogStatus.SKIP,Parent.addScreenCapture(genericMethods.addScreenCapture()) + screenText +" Test skipped");
 	}
 
 	public static void Fatal(String details, String actualResult, String screenshot)
@@ -197,7 +197,7 @@ public class ReportGenerate {
 		Parent.log(LogStatus.UNKNOWN, details, actualResult);
 	}
 
-	public static closeExtentReport(){
+	public static void closeExtentReport(){
 
 		extent.endTest(Parent);
 		extent.flush();

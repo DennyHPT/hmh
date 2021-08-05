@@ -9,16 +9,16 @@ import org.testng.annotations.Test;
 
 public class ReadConfigInpData {
 	
-	String propFileName;
-	InputStream fileInput;
-	String linkCount;
-	public String startVal;
-	public String endVal;
+	public static String propFileName;
+	public static InputStream fileInput;
+	static String linkCount;
+	public static String startVal;
+	public static String endVal;
 	
 	
 	
   @Test
-  public void readConfigData() throws IOException {
+  public static void readConfigData() throws IOException {
 	try {
 			Properties properties = new Properties();
 			propFileName = System.getProperty("user.dir")+"\\config\\data.properties";

@@ -23,8 +23,7 @@ public class TestData {
 	InputStream inputStream;
 	
 		
-  @Test
-  public static ArrayList<ArrayList<String>> getSheet() {
+ public static ArrayList<ArrayList<String>> getSheet() {
 			
 		ArrayList<ArrayList<String>> data = new ArrayList<ArrayList<String>>();
 			
@@ -75,8 +74,6 @@ public class TestData {
 	
 			return data;
 		}	
-  
- 
 
   
 }
